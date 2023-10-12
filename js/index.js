@@ -151,7 +151,20 @@ window.addEventListener('hashchange', function () {
   const hash = window.location.hash.substring(1); // Získáme název stránky bez "#"
   if (hash) {
       // Na základě hashe načteme správný obsah
-      nacistObsah(hash);
+      switch (hash) {
+          case 'hlavni':
+              nacistObsah('obsahHlavni');
+              break;
+          case 'servers':
+              nacistObsahServers('obsahServers');
+              break;
+          case 'ateam':
+              nacistObsahATeam('obsahATeam');
+              break;
+          // Přidejte další stránky podle potřeby
+          default:
+              console.error(`Nerozpoznaný hash: ${hash}`);
+      }
   }
 });
 
