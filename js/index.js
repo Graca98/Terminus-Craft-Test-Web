@@ -70,11 +70,14 @@ function nactiObsah(idDivu) {
 //* Když je obsahStranky prázdný, načte sekci "informace"
 if (cilovyDiv.innerHTML === "") {
   nactiObsah("informace")
+  window.location.hash = document.getElementById("informace");
+
   // nacistObsahATeam('aTeam')
 }
 
 // Náčítání stránek pomocí # (šípek zpět/dopředu)
-window.addEventListener('hashchange', function () {
+// window.addEventListener('hashchange', function () {
+window.addEventListener('popstate', function () {
   const hash = window.location.hash.substring(1); // Získáme název stránky bez "#"
   if (hash) {
       // Na základě hashe načteme správný obsah
