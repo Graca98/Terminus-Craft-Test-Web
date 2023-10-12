@@ -30,31 +30,31 @@
           <!--? Hlavní stránka -->
           <div class="btn-group d-block mt-1 mt-lg-0">
             <button type="button" class="btn btn-dark pe-1">
-              <a id="btnInformaceMain" class="nav-link dropdown-item text-white" aria-current="page" href="#" onclick="nacistObsah('informace')">Hlavní stránka</a>
+              <a id="btnMain" class="nav-link dropdown-item text-white" onclick="nactiObsah('informace')">Hlavní stránka</a>
             </button>
-            <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split ps-1 px-3 py-3"
+            <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split ps-1 py-2"
               data-bs-toggle="dropdown" aria-expanded="false">
               <span class="visually-hidden">Toggle Dropdown</span>
             </button>
             <ul class="dropdown-menu">
               <li>
-                <button class="dropdown-item" id="btnInformace" href="#" onclick="nactiObsah('informace')">Informace</button>
+                <a class="dropdown-item" id="btnInformace" onclick="nactiObsah('informace')">Informace</a>
               </li>
               <li>
-                <button class="dropdown-item" id="btnPravidla" href="#" onclick="nactiObsah('pravidla')">Pravidla</button>
+                <a class="dropdown-item" id="btnPravidla" onclick="nactiObsah('pravidla')">Pravidla</a>
               </li>
               <li>
-                <button class="dropdown-item" id="btnDownload" href="#" onclick="nactiObsah('download')">Ke stažení</button>
+                <a class="dropdown-item" id="btnDownload" onclick="nactiObsah('download')">Ke stažení</a>
               </li>
               <li>
-                <button class="dropdown-item" id="btnKontakt" href="#" onclick="nactiObsah('kontakt')">Kontakty</button>
+                <a class="dropdown-item" id="btnKontakt" onclick="nactiObsah('kontakt')">Kontakty</a>
               </li>
             </ul>
           </div>
           <!--? Servery -->
           <div class="btn-group d-block mt-lg-0">
             <button type="button" class="btn btn-dark pe-1">
-              <a class="nav-link dropdown-item text-white" href="#" onclick="nactiObsah('servers')">Servery</a>
+              <a id="btnServers" class="nav-link dropdown-item text-white" onclick="nactiObsah('servers')">Servery</a>
             </button>
             <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split ps-1 px-3 py-3"
               data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,16 +62,16 @@
             </button>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="#" onclick="nactiObsah('servers')">Jak se připojit</a>
+                <a class="dropdown-item" onclick="nactiObsah('servers')">Jak se připojit</a>
               </li>
-              <li><a class="dropdown-item" href="#" onclick="nactiObsah('serverSky')">Skyblock</a></li>
-              <li><a class="dropdown-item disabled" href="#" onclick="nactiObsah('serverSur')">Survival</a></li>
+              <li><a class="dropdown-item" onclick="nactiObsah('serverSky')">Skyblock</a></li>
+              <li><a class="dropdown-item disabled" onclick="nactiObsah('serverSur')">Survival</a></li>
             </ul>
           </div>
           <!--? Admin Team -->
           <div class="btn-group d-block mt-lg-0">
             <button type="button" class="btn btn-dark pe-1">
-              <a class="nav-link dropdown-item text-white" href="#" onclick="nactiObsah('aTeam')">Admin Team</a>
+              <a class="nav-link dropdown-item text-white" onclick="nactiObsah('aTeam')">Admin Team</a>
             </button>
             <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split ps-1 px-3 py-3"
               data-bs-toggle="dropdown" aria-expanded="false">
@@ -79,20 +79,20 @@
             </button>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="#" onclick="nactiObsah('aTeam')">TCraft Vedení</a>
+                <a class="dropdown-item" onclick="nactiObsah('aTeam')">TCraft Vedení</a>
               </li>
-              <li><a class="dropdown-item" href="#">Skyblock Team</a></li>
-              <li><a class="dropdown-item" href="#">Event Team</a></li>
-              <li><a class="dropdown-item" href="#">Builder Team</a></li>
+              <li><a class="dropdown-item">Skyblock Team</a></li>
+              <li><a class="dropdown-item">Event Team</a></li>
+              <li><a class="dropdown-item">Builder Team</a></li>
               <li>
-                <a class="dropdown-item" href="#">Speciální poděkování</a>
+                <a class="dropdown-item">Speciální poděkování</a>
               </li>
             </ul>
           </div>
           <!--? Výhody-->
           <div class="btn-group d-block mt-lg-0">
             <button type="button" class="btn btn-dark pe-1">
-              <a class="nav-link dropdown-item text-white" href="#">Výhody</a>
+              <a class="nav-link dropdown-item text-white">Výhody</a>
             </button>
             <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split ps-1 px-3 py-3"
               data-bs-toggle="dropdown" aria-expanded="false">
@@ -100,33 +100,34 @@
             </button>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="#">Proč kupovat VIP</a>
+                <a class="dropdown-item">Proč kupovat VIP</a>
               </li>
-              <li><a class="dropdown-item" href="#">Skyblock</a></li>
-              <li><a class="dropdown-item" href="#">Event</a></li>
-              <li><a class="dropdown-item" href="#">Survival</a></li>
+              <li><a class="dropdown-item">Skyblock</a></li>
+              <li><a class="dropdown-item">Event</a></li>
+              <li><a class="dropdown-item">Survival</a></li>
             </ul>
           </div>
           <!--? FAQ-->
           <div class="btn-group d-block mt-lg-0">
             <button type="button" class="btn btn-dark pe-1 disabled">
-              <a class="nav-link dropdown-item text-white" href="#">FAQ</a>
+              <a class="nav-link dropdown-item text-white">FAQ</a>
             </button>
             <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split ps-1 px-3 py-3 disabled"
               data-bs-toggle="dropdown" aria-expanded="false">
               <span class="visually-hidden">Toggle Dropdown</span>
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Skyblock</a></li>
-              <li><a class="dropdown-item" href="#">Event</a></li>
-              <li><a class="dropdown-item" href="#">Survival</a></li>
+              <li><a class="dropdown-item">Skyblock</a></li>
+              <li><a class="dropdown-item">Event</a></li>
+              <li><a class="dropdown-item">Survival</a></li>
             </ul>
           </div>
           <!--? Bany -->
           <div class="d-block mt-lg-0">
-            <button type="button" class="btn btn-dark pe-2">
+            <button type="button" class="btn btn-dark btnStyl">
               <li>
-                <a href="https://bans.tcraft.eu/" target="”_blank”" id="btnBany" class="nav-link text-white px-2 py-2">Bany</a>
+                <!-- <a href="https://bans.tcraft.eu/" target="”_blank”" id="btnBany" class="nav-link text-white px-2 py-2">Bany</a> -->
+                <a href="https://bans.tcraft.eu/" target="”_blank”" id="btnBany" class="nav-link text-white">Bany</a>
               </li>
             </button>
           </div>

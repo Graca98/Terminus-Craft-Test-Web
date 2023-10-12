@@ -72,6 +72,19 @@ h2 {
     --bs-btn-disabled-border-color: #198754;
 }
 
+.nav {
+    --bs-nav-link-padding-y: 0.1rem;
+}
+
+.dropdown-item {
+ cursor: pointer;
+}
+
+.btnStyl{
+  --bs-btn-padding-x: 0rem;
+  padding: 0.375rem 0.75rem;
+}
+
 .img-shadow:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: box-shadow 0.3s ease;
