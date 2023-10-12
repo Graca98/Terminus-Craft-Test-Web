@@ -28,52 +28,6 @@ $(document).ready(function(){
 
 const cilovyDiv = document.getElementById('obsahStranky');
 
-//todo Nastavit
-// Přidáme stav do historie prohlížeče a aktualizujeme URL
-function addHistoryState(pageUrl) {
-  window.history.pushState({ url: pageUrl }, "", pageUrl);
-}
-
-// Obsluha události popstate
-window.addEventListener("popstate", function (event) {
-  if (event && event.state && event.state.url) {
-    const pageUrl = event.state.url;
-    // Pokračujte v kódě, protože event a event.state jsou definované a mají vlastnost 'url'
-  } else {
-    // Zde můžete obsloužit situaci, kdy event nebo event.state nejsou definované nebo mají chybnou strukturu.
-    console.error('Neplatný event nebo event.state');
-  }
-  
-  // Načtěte obsah stránky na základě URL
-  nacistHistoryObsah(pageUrl);
-});
-
-// Použijte tuto funkci pro načtení obsahu a aktualizaci historie prohlížeče
-function nacistHistoryObsah(pageUrl) {
-
-  // Pokud cílový div existuje, smažeme jeho stávající obsah
-  if (cilovyDiv) {
-    cilovyDiv.innerHTML = ''; // Vymaže obsah divu
- } else {
-    console.error('Cílový div nebyl nalezen.');
-    return;
- }
-  // Zde načtěte obsah stránky podle URL
-  fetch(pageUrl)
-    .then(response => response.text())
-    .then(data => {
-      cilovyDiv.innerHTML = data;
-      // Aktualizujte historii a URL až po úspěšném načtení obsahu
-      addHistoryState(pageUrl);
-    })
-    .catch(error => {
-      console.error('Chyba při načítání obsahu stránky:', error);
-    });
-}
-//todo ========================
-
-
-
 //! Funkce pro načtení obsahu z hlavni.html
 function nacistObsah(idDivu) {
   // Najdeme cílový div na této stránce
@@ -101,6 +55,7 @@ function nacistObsah(idDivu) {
           if (obsahCilevehoDivu) {
             cilovyDiv.appendChild(obsahCilevehoDivu);
             nactiPopovers()
+            window.location.hash = idDivu;
           } else {
               console.error(`Div s id "${idDivu}" nebyl nalezen ve stránce "index.html".`);
           }
@@ -189,6 +144,13 @@ if (cilovyDiv.innerHTML === "") {
   nacistObsahATeam('aTeam')
 }
 
+window.addEventListener('hashchange', function () {
+  const hash = window.location.hash.substring(1); // Získáme název stránky bez "#"
+  if (hash) {
+      // Na základě hashe načteme správný obsah
+      nacistObsah(hash);
+  }
+});
 
 //? Dropdowb on hover
 // $(document).ready(function(){
