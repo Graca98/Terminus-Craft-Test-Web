@@ -92,6 +92,7 @@ function nacistObsahServers(idDivu) {
       if (obsahCilevehoDivu) {
         cilovyDiv.appendChild(obsahCilevehoDivu);
         nactiPopovers()
+        window.location.hash = idDivu;
       } else {
           console.error(`Div s id "${idDivu}" nebyl nalezen ve stránce "servers.html".`);
       }
@@ -127,6 +128,7 @@ function nacistObsahATeam(idDivu) {
       if (obsahCilevehoDivu) {
         cilovyDiv.appendChild(obsahCilevehoDivu);
         nactiPopovers()
+        window.location.hash = idDivu;
       } else {
           console.error(`Div s id "${idDivu}" nebyl nalezen ve stránce "ateam.html".`);
       }
@@ -144,6 +146,7 @@ if (cilovyDiv.innerHTML === "") {
   nacistObsahATeam('aTeam')
 }
 
+// Náčítání stránek pomocí # (šípek zpět/dopředu)
 window.addEventListener('hashchange', function () {
   const hash = window.location.hash.substring(1); // Získáme název stránky bez "#"
   if (hash) {
