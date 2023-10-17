@@ -1,6 +1,6 @@
 body {
     background-position: center top;
-    /*! background-image: url(./img/background.png); */
+    background-image: url(./img/background.png);
     background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,7 +21,7 @@ h2 {
 }
 
 
-/*, Main */
+/*! Main */
 .backround {
     background: -webkit-linear-gradient(left, rgba(240,255,255,1) 2%,rgba(240,255,255,0) 140%);
     padding: 4rem;
@@ -53,7 +53,7 @@ h2 {
     width: 50px;
 }
 
-/*, Custom styles */
+/*! Custom styles */
 .btn-myGreen {
     /* background-color: #5cbd3f; */
     --bs-btn-color: #fff;
@@ -72,8 +72,22 @@ h2 {
     --bs-btn-disabled-border-color: #198754;
 }
 
+.nav {
+    --bs-nav-link-padding-y: 0.1rem;
+}
+
+.dropdown-item {
+ cursor: pointer;
+}
+
+/* Custom styl pro btn "bany" */
+.btnStyl{
+  --bs-btn-padding-x: 0rem;
+  padding: 0.375rem 0.75rem;
+}
+
 .img-shadow:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
     transition: box-shadow 0.3s ease;
     cursor: pointer;
 }
@@ -84,8 +98,18 @@ h2 {
     margin: auto;
 }
 
+/* Smaže ramečky kolem karet aTeamu */
+.card { 
+    --bs-card-border-width: 0;
+    --bs-card-border-color: 0;
+}
+.card:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+}
 
-/*, Footer */
+
+/*! Footer */
 footer {
     height: 3rem;
 
@@ -104,6 +128,7 @@ footer > p {
     font-size: 0.9rem;
 }
 
+/*! Media screen */
 @media screen and (min-width: 1200px) {
     .maxSirka {
       max-width: 1400px;
@@ -118,10 +143,10 @@ footer > p {
     .backround {
         padding: 3rem;
     }
-    .headerImg {
+    /* .headerImg {
         width: 75%;
         height: auto;
-    }
+    } */
     footer > p {
         font-size: 0.9rem;
     }
@@ -134,10 +159,10 @@ footer > p {
     .backround {
         padding: 2rem;
     }
-    .headerImg {
+    /* .headerImg {
         width: 100%;
         height: auto;
-    }
+    } */
     footer > p {
         font-size: 0.7rem;
     }
