@@ -40,6 +40,7 @@ function nactiObsah(idDivu, addToHistory = true) {
       const obsahCilevehoDivu = tempElement.querySelector(`#${idDivu}`);
       if (obsahCilevehoDivu) {
         removeActivePages(idDivu)
+        
         cilovyDiv.appendChild(obsahCilevehoDivu);
         nactiPopovers();
         activePage(idDivu)
