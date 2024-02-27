@@ -1,2 +1,4 @@
 # TerminusCraft-Web
-Návrh nového webu pro Terminus Craft
+Návrh webu pro Terminus Craft (Bootstrap)
+
+https://graca98.github.io/Terminus-Craft-Test-Web
