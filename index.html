@@ -1,166 +1,279 @@
 <!DOCTYPE html>
 <html lang="cs">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Minecraft SkyBlock and Survival server" />
-  <meta name="keywords"
-    content="TerminusCraft,TCraft,Minecraft,Skyblock,Survival,Eventy,Minihry,tcraft.eu,tcraft eu,terminus craft,tcraft,tcrafteu,minecraft,skyblock, skyblock server, minecraft server, minecraft skyblock" />
-  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
-  <link href="style.css" rel="stylesheet" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <title>Terminus</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="Denis Gracias" content="Tvůrce Terminus webu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Minecraft SkyBlock and Survival server" />
+    <meta
+      name="keywords"
+      content="TerminusCraft,TCraft,Minecraft,Skyblock,Survival,Eventy,Minihry,tcraft.eu,tcraft eu,terminus craft,tcraft,tcrafteu,minecraft,skyblock, skyblock server, minecraft server, minecraft skyblock"
+    />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Terminus</title>
+  </head>
 
-<body>
-  <!--! Header -->
-  <header>
-    <img src="./img/header.png" class="headerImg py-3 px-4 img-fluid" />
-    <!-- </div> -->
-    <nav class="nav nav-underline navbar navbar-expand-lg bg-dark px-3 py-2" data-bs-theme="dark"
-      aria-label="breadcrumb">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-          aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <!--? Hlavní stránka -->
-          <div class="btn-group d-block mt-1 mt-lg-0">
-            <button type="button" class="btn btn-dark pe-1">
-              <a id="btnMain" class="nav-link dropdown-item text-white" onclick="nactiObsah('informace')">Hlavní stránka</a>
-            </button>
-            <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split ps-1 py-2"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <span class="visually-hidden">Toggle Dropdown</span>
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" id="btnInformace" onclick="nactiObsah('informace')">Informace</a>
-              </li>
-              <li>
-                <a class="dropdown-item" id="btnPravidla" onclick="nactiObsah('pravidla')">Pravidla</a>
-              </li>
-              <li>
-                <a class="dropdown-item" id="btnDownload" onclick="nactiObsah('download')">Ke stažení</a>
-              </li>
-              <li>
-                <a class="dropdown-item" id="btnKontakt" onclick="nactiObsah('kontakt')">Kontakty</a>
-              </li>
-            </ul>
-          </div>
-          <!--? Servery -->
-          <div class="btn-group d-block mt-lg-0">
-            <button type="button" class="btn btn-dark pe-1">
-              <a id="btnServers" class="nav-link dropdown-item text-white" onclick="nactiObsah('servers')">Servery</a>
-            </button>
-            <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split ps-1 py-2"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <span class="visually-hidden">Toggle Dropdown</span>
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" onclick="nactiObsah('servers')">Jak se připojit</a>
-              </li>
-              <li><a class="dropdown-item" onclick="nactiObsah('serverSky')">Skyblock</a></li>
-              <li><a class="dropdown-item disabled" onclick="nactiObsah('serverSur')">Survival</a></li>
-            </ul>
-          </div>
-          <!--? Admin Team -->
-          <div class="btn-group d-block mt-lg-0">
-            <button type="button" class="btn btn-dark pe-1">
-              <a id="btnTeam" class="nav-link dropdown-item text-white" onclick="nactiObsah('aTeam')">Admin Team</a>
-            </button>
-            <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split ps-1 py-2"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <span class="visually-hidden">Toggle Dropdown</span>
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" onclick="nactiObsah('aTeam')">TCraft Vedení</a>
-              </li>
-              <li><a class="dropdown-item">Skyblock Team</a></li>
-              <li><a class="dropdown-item">Event Team</a></li>
-              <li><a class="dropdown-item">Builder Team</a></li>
-              <li>
-                <a class="dropdown-item">Speciální poděkování</a>
-              </li>
-            </ul>
-          </div>
-          <!--? Výhody-->
-          <div class="btn-group d-block mt-lg-0">
-            <button type="button" class="btn btn-dark pe-1">
-              <a id="btnVyhody" class="nav-link dropdown-item text-white">Výhody</a>
-            </button>
-            <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split ps-1 py-2"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <span class="visually-hidden">Toggle Dropdown</span>
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item">Proč kupovat VIP</a>
-              </li>
-              <li><a class="dropdown-item">Skyblock</a></li>
-              <li><a class="dropdown-item">Event</a></li>
-              <li><a class="dropdown-item">Survival</a></li>
-            </ul>
-          </div>
-          <!--? FAQ-->
-          <div class="btn-group d-block mt-lg-0">
-            <button type="button" class="btn btn-dark pe-1 disabled">
-              <a id="btnFaq" class="nav-link dropdown-item text-white">FAQ</a>
-            </button>
-            <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split ps-1 py-2 disabled"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <span class="visually-hidden">Toggle Dropdown</span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item">Skyblock</a></li>
-              <li><a class="dropdown-item">Event</a></li>
-              <li><a class="dropdown-item">Survival</a></li>
-            </ul>
-          </div>
-          <!--? Bany -->
-          <div class="d-block mt-lg-0">
-            <button type="button" class="btn btn-dark btnStyl">
-              <li>
-                <a id="btnBany" href="https://bans.tcraft.eu/" target="”_blank”" class="nav-link text-white">Bany</a>
-              </li>
-            </button>
-          </div>
-          <div class="text-end col-3 col-lg-auto d-flex mt-3 mt-lg-0 ms-lg-auto">
-            <button type="button" class="btn btn-success btn-lg p-0">
-              <a href="https://store.tcraft.eu/" target="”_blank”" id="btnStore"
-                class="nav-link px-4 py-2 text-white">Store</a>
-            </button>
-
+  <body>
+    <!--! Header -->
+    <header>
+      <img src="./img/header.png" class="headerImg py-3 px-4 img-fluid" />
+      <!-- </div> -->
+      <nav
+        class="nav nav-underline navbar navbar-expand-lg bg-dark px-3 py-2"
+        data-bs-theme="dark"
+        aria-label="breadcrumb"
+      >
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <!--? Hlavní stránka -->
+            <div class="btn-group d-block mt-1 mt-lg-0">
+              <button type="button" class="btn btn-dark pe-1">
+                <a
+                  id="btnMain"
+                  class="nav-link dropdown-item text-white"
+                  onclick="nactiObsah('informace')"
+                  >Hlavní stránka</a
+                >
+              </button>
+              <button
+                type="button"
+                class="btn btn-dark dropdown-toggle dropdown-toggle-split ps-1 py-2"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    id="btnInformace"
+                    onclick="nactiObsah('informace')"
+                    >Informace</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    id="btnPravidla"
+                    onclick="nactiObsah('pravidla')"
+                    >Pravidla</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    id="btnDownload"
+                    onclick="nactiObsah('download')"
+                    >Ke stažení</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    id="btnKontakt"
+                    onclick="nactiObsah('kontakt')"
+                    >Kontakty</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!--? Servery -->
+            <div class="btn-group d-block mt-lg-0">
+              <button type="button" class="btn btn-dark pe-1">
+                <a
+                  id="btnServers"
+                  class="nav-link dropdown-item text-white"
+                  onclick="nactiObsah('servers')"
+                  >Servery</a
+                >
+              </button>
+              <button
+                type="button"
+                class="btn btn-dark dropdown-toggle dropdown-toggle-split ps-1 py-2"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" onclick="nactiObsah('servers')"
+                    >Jak se připojit</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="nactiObsah('serverSky')"
+                    >Skyblock</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item disabled"
+                    onclick="nactiObsah('serverSur')"
+                    >Survival</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!--? Admin Team -->
+            <div class="btn-group d-block mt-lg-0">
+              <button type="button" class="btn btn-dark pe-1">
+                <a
+                  id="btnTeam"
+                  class="nav-link dropdown-item text-white"
+                  onclick="nactiObsah('aTeam')"
+                  >Admin Team</a
+                >
+              </button>
+              <button
+                type="button"
+                class="btn btn-dark dropdown-toggle dropdown-toggle-split ps-1 py-2"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" onclick="nactiObsah('aTeam')"
+                    >TCraft Vedení</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item disabled" aria-disabled="true"
+                    >Skyblock Team</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item disabled" aria-disabled="true"
+                    >Event Team</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item disabled" aria-disabled="true"
+                    >Builder Team</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item disabled" aria-disabled="true"
+                    >Speciální poděkování</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!--? Výhody-->
+            <div class="btn-group d-block mt-lg-0">
+              <button type="button" class="btn btn-dark pe-1" disabled>
+                <a id="btnVyhody" class="nav-link dropdown-item text-white"
+                  >Výhody</a
+                >
+              </button>
+              <button
+                type="button"
+                class="btn btn-dark dropdown-toggle dropdown-toggle-split ps-1 py-2"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                disabled
+              >
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item">Proč kupovat VIP</a>
+                </li>
+                <li><a class="dropdown-item">Skyblock</a></li>
+                <li><a class="dropdown-item">Event</a></li>
+                <li><a class="dropdown-item">Survival</a></li>
+              </ul>
+            </div>
+            <!--? FAQ-->
+            <div class="btn-group d-block mt-lg-0">
+              <button type="button" class="btn btn-dark pe-1 disabled">
+                <a id="btnFaq" class="nav-link dropdown-item text-white">FAQ</a>
+              </button>
+              <button
+                type="button"
+                class="btn btn-dark dropdown-toggle dropdown-toggle-split ps-1 py-2 disabled"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item">Skyblock</a></li>
+                <li><a class="dropdown-item">Event</a></li>
+                <li><a class="dropdown-item">Survival</a></li>
+              </ul>
+            </div>
+            <!--? Bany -->
+            <div class="d-block mt-lg-0">
+              <button type="button" class="btn btn-dark btnStyl" disabled>
+                <li>
+                  <a
+                    id="btnBany"
+                    href="https://bans.tcraft.eu/"
+                    target="”_blank”"
+                    class="nav-link text-white"
+                    >Bany</a
+                  >
+                </li>
+              </button>
+            </div>
+            <!--? Store -->
+            <div
+              class="text-end col-3 col-lg-auto d-flex mt-3 mt-lg-0 ms-lg-auto"
+            >
+              <button type="button" class="btn btn-success btn-lg p-0">
+                <a href="#" id="btnStore" class="nav-link px-4 py-2 text-white"
+                  >Store</a
+                >
+              </button>
+            </div>
           </div>
         </div>
+      </nav>
+    </header>
+
+    <!--! Main -->
+    <main>
+      <div class="container-fluid backround">
+        <div class="maxSirka" id="obsahStranky"></div>
       </div>
-    </nav>
-  </header>
+    </main>
 
-  <!--! Main -->
-  <main>
-    <div class="container-fluid backround">
-      <div class="maxSirka" id="obsahStranky"></div>
-    </div>
-  </main>
+    <!--! Footer -->
+    <footer class="bg-dark py-3 py-md-0">
+      <p class="px-3 text-secondary">
+        Copyright © TerminusCraft 2019 - 2023 - Všechna práva vyhrazena
+      </p>
+    </footer>
 
-  <!--! Footer -->
-  <footer class="bg-dark py-3 py-md-0">
-    <p class="px-3 text-secondary">
-      Copyright © TerminusCraft 2019 - 2023 - Všechna práva vyhrazena
-    </p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
     <script src="./js/index.js"></script>
     <script src="./js/copy.js"></script>
-</body>
-
+  </body>
 </html>

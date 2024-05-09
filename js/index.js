@@ -5,10 +5,10 @@ function nactiPopovers() {
 }
 
 // Dropwodn se zavře
-$('.dropdown-item').on('click', function(){
+$('.dropdown-item').on('click', function () {
   $('.navbar-collapse').collapse('hide');
 });
-$(document).ready(function(){
+$(document).ready(function () {
 })
 
 
@@ -16,9 +16,8 @@ $(document).ready(function(){
 const cilovyDiv = document.getElementById('obsahStranky');
 
 function nactiObsah(idDivu, addToHistory = true) {
-  // Najdeme cílový div na této stránce
+  // Najde cílový
   // const cilovyDiv = document.getElementById('obsahStranky');
-  
 
   // Pokud cílový div existuje, smažeme jeho stávající obsah
   if (cilovyDiv) {
@@ -59,20 +58,14 @@ function nactiObsah(idDivu, addToHistory = true) {
 window.addEventListener('popstate', function (event) {
   if (event.state && event.state.divId) {
     console.log('Hash changed:', window.location.hash);
-    nactiObsah(event.state.divId, false); // Nepřidáváme to do historie, abychom se vyhnuli prázdnému hashi
+    nactiObsah(event.state.divId, false); // Nepřidát do historie (vyhnutí prázdnému #)
   }
 });
-
-
-
-    
 
 //* Když je obsahStranky prázdný, načte sekci "informace"
 if (cilovyDiv.innerHTML === "") {
   nactiObsah("informace")
 }
-
-
 
 //* Test zone
 let btnMain = document.getElementById("btnMain")
@@ -103,7 +96,7 @@ function activePage(divId) {
   console.log("Div " + divId + " nalezen")
   if (divId) {
     if (divId === "informace" || divId === "pravidla" || divId === "download" || divId === "kontakt") {
-      btnMain.classList.add("active") 
+      btnMain.classList.add("active")
     } else if (divId === "servers" || divId === "serverSky" || divId === "serverSur") {
       btnServers.classList.add("active")
     } else if (divId === "aTeam") {
@@ -115,38 +108,3 @@ function activePage(divId) {
     console.error(`Element s ID "${divId}" nebyl nalezen.`);
   }
 }
-
-
-
-
-
-
-
-//? Dropdowb on hover
-// $(document).ready(function(){
-//   $('.dropdown').hover(function(){
-//     $(this).find('.dropdown-menu')
-//     .stop(true, true).delay(100).fadeIn(200);
-//   }, function(){
-//     $(this).find('.dropdown-menu')
-//     .stop(true, true).delay(100).fadeOut(200);
-//   });
-// });
-
-//? Staré načítání stránek
-// $('#btnInformace,#btnInformaceMain').click(function(e){
-//   $("#pravidla,#download,#kontakt").addClass("d-none")
-//   $("#informace").removeClass("d-none")
-// })
-// $('#btnPravidla').click(function(){
-//     $("#informace,#download,#kontakt").addClass("d-none")
-//     $("#pravidla").removeClass("d-none")
-// })
-// $('#btnDownload').click(function(){
-//     $("#informace,#pravidla,#kontakt").addClass("d-none")
-//     $("#download").removeClass("d-none")
-// })
-// $('#btnKontakt').click(function(){
-//     $("#informace,#pravidla,#download").addClass("d-none")
-//     $("#kontakt").removeClass("d-none")
-// })
